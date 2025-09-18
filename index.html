@@ -1,11 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gayathri Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gayathri | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    nav {
+      background: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #f4b400;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      background: #333;
+      color: #fff;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Portfolio 👩‍💻</h1>
-  <p>This is my GitHub Pages portfolio site.</p>
+
+  <header>
+    <h1>Gayathri</h1>
+    <p>Junior Software Developer | Java & Spring Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Gayathri 👩‍💻. I’m currently working as a Junior Software Developer at Velox Solution. 
+      I specialize in Java, Spring, and web development. I enjoy building practical applications and solving real-world problems.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">Java, J2EE, MySQL</div>
+      <div class="card">HTML, CSS, JavaScript</div>
+      <div class="card">Hibernate, Spring Framework</div>
+      <div class="card">Postman, GitHub, IntelliJ, STS</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Food Waste Management System</h3>
+        <p>Designed a system to track and redistribute excess food to NGOs and shelters, reducing waste and helping the environment.</p>
+      </div>
+      <div class="card">
+        <h3>CRM - Customer Relationship Management</h3>
+        <p>Built a Spring Boot app to automate BitLocker encryption, integrated with JSP dashboard and MySQL for secure tracking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+      <li>Completed a Cloud Computing course on NPTEL and earned an Elite certification</li>
+      <li>Awarded Best Student in Co-Curricular Activities</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a></p>
+    <p>GitHub: <a href="https://github.com/gayathrisubramani07" target="_blank">github.com/gayathrisubramani07</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Gayathri | Portfolio</p>
+  </footer>
+
 </body>
 </html>
