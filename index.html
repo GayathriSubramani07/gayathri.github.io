@@ -1,121 +1,184 @@
-// App.jsx
-import React from "react";
-import Typed from "react-typed";
-import { motion } from "framer-motion";
-import "./index.css";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gayathri | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      position: fixed;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    header h1 { margin: 0; font-size: 22px; }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+    }
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+    }
+    .hero h2 { font-size: 36px; }
+    .hero .subtitle { font-size: 20px; margin-top: 10px; }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff6600;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .projects, .skills, .certifications, .contact {
+      display: grid;
+      gap: 20px;
+    }
+    .project-card, .skill-card, .cert-card {
+      padding: 20px;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #f5f5f5;
+    }
+    .dark-mode section { background: #1e1e1e; }
+    .theme-toggle {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gayathri</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" onclick="document.body.classList.toggle('dark-mode')">🌙</button>
+    </nav>
+  </header>
 
-const projects = [
-  {
-    title: "Endpoint Management System",
-    desc: "Vulnerability detection & remediation with Spring Boot + JSP + MySQL.",
-    github: "https://github.com/yourrepo",
-    demo: "https://yourdemo.com",
-  },
-  {
-    title: "Library Management System",
-    desc: "CRUD + auth + reporting with Spring Boot & MySQL.",
-    github: "https://github.com/yourrepo",
-  },
-  {
-    title: "Portfolio Website",
-    desc: "Built with HTML, CSS, JS showcasing my skills.",
-    github: "https://github.com/yourrepo",
-    demo: "https://yourportfolio.com",
-  },
-];
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Hi, I’m Gayathri 👩‍💻</h2>
+    <p class="subtitle"><span id="typed"></span></p>
+    <a href="Gayathri_Resume.pdf" class="btn" download>Download Resume</a>
+  </section>
 
-function App() {
-  return (
-    <div className="font-sans bg-gray-100 text-gray-800">
-      {/* Header */}
-      <header className="fixed w-full bg-gray-900 text-white p-4 flex justify-between z-50 shadow-md">
-        <h1 className="text-xl font-bold">Gayathri</h1>
-        <nav className="space-x-4">
-          <a href="#about" className="hover:text-orange-400">About</a>
-          <a href="#projects" className="hover:text-orange-400">Projects</a>
-          <a href="#skills" className="hover:text-orange-400">Skills</a>
-          <a href="#contact" className="hover:text-orange-400">Contact</a>
-        </nav>
-      </header>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Junior Software Developer working in IT industry. My expertise lies in
+      Java, Spring Boot, REST APIs, JSP, MySQL, and front-end technologies.  
+      Passionate about building scalable applications and solving real-world problems.
+    </p>
+  </section>
 
-      {/* Hero */}
-      <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-600 to-blue-500 text-white">
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-4xl md:text-5xl font-bold"
-        >
-          Hi, I'm Gayathri 👩‍💻
-        </motion.h2>
-        <Typed
-          className="text-xl mt-4"
-          strings={["Junior Software Developer", "Java & Spring Enthusiast", "Problem Solver"]}
-          typeSpeed={60}
-          backSpeed={40}
-          loop
-        />
-        <motion.a
-          href="Gayathri_Resume.pdf"
-          download
-          className="mt-6 px-6 py-3 bg-orange-500 rounded-lg shadow-lg hover:bg-orange-600 transition"
-          whileHover={{ scale: 1.1 }}
-        >
-          Download Resume
-        </motion.a>
-      </section>
-
-      {/* About */}
-      <section id="about" className="py-20 px-6 md:px-20 bg-white">
-        <motion.h2
-          className="text-3xl font-bold mb-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          About Me
-        </motion.h2>
-        <motion.p
-          className="text-lg max-w-3xl mx-auto"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          I am a Junior Software Developer working in IT industry. My expertise lies in
-          Java, Spring Boot, REST APIs, JSP, MySQL, and front-end technologies. Passionate
-          about building scalable applications and solving real-world problems.
-        </motion.p>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="py-20 px-6 md:px-20 bg-gray-100">
-        <h2 className="text-3xl font-bold mb-10 text-center">Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((proj, idx) => (
-            <motion.div
-              key={idx}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-            >
-              <h3 className="font-bold text-xl mb-2">{proj.title}</h3>
-              <p className="mb-4">{proj.desc}</p>
-              <div className="flex space-x-4">
-                <a href={proj.github} target="_blank" rel="noreferrer" className="text-blue-600 hover:underline">GitHub</a>
-                {proj.demo && (
-                  <a href={proj.demo} target="_blank" rel="noreferrer" className="text-orange-500 hover:underline">Live Demo</a>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Endpoint Management System</h3>
+        <p>Worked on vulnerability detection & remediation module with Spring Boot + JSP + MySQL.</p>
+        <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a> | <a href="https://yourdemo.com" target="_blank">Live Demo</a></p>
+      </div>
+      <div class="project-card">
+        <h3>Library Management System</h3>
+        <p>Developed with Spring Boot & MySQL. Includes CRUD operations, authentication, and reporting.</p>
+        <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a></p>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Built with HTML, CSS, and JavaScript showcasing my skills and experience.</p>
+        <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a> | <a href="https://yourportfolio.com" target="_blank">Live</a></p>
+      </div>
     </div>
-  );
-}
+  </section>
 
-export default App;
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <div class="skill-card">Java, Spring Boot, Hibernate</div>
+      <div class="skill-card">JSP, Servlets, REST APIs</div>
+      <div class="skill-card">MySQL, SQL</div>
+      <div class="skill-card">HTML, CSS, JavaScript</div>
+      <div class="skill-card">Git, Maven, Postman</div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div class="cert-card">Full Stack Web Development – TAP Academy</div>
+      <div class="cert-card">Java Programming – NPTEL</div>
+      <div class="cert-card">Spring Framework Basics – Udemy</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p><i class="fa fa-envelope"></i> yourmail@example.com</p>
+      <p><i class="fa fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+      <p><i class="fa fa-github"></i> <a href="https://github.com/yourgithub" target="_blank">GitHub</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Gayathri | Portfolio</p>
+  </footer>
+
+  <!-- Typed.js Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed("#typed", {
+      strings: ["Junior Software Developer", "Java & Spring Enthusiast", "Problem Solver"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+  </script>
+</body>
+</html>
