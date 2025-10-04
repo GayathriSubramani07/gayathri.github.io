@@ -1,184 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gayathri | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-      scroll-behavior: smooth;
-      transition: background 0.3s, color 0.3s;
-    }
-    header {
-      position: fixed;
-      width: 100%;
-      background: #222;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-    header h1 { margin: 0; font-size: 22px; }
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-    }
-    section {
-      padding: 100px 20px;
-      min-height: 100vh;
-    }
-    .hero {
-      text-align: center;
-      background: linear-gradient(to right, #667eea, #764ba2);
-      color: #fff;
-    }
-    .hero h2 { font-size: 36px; }
-    .hero .subtitle { font-size: 20px; margin-top: 10px; }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #ff6600;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .projects, .skills, .certifications, .contact {
-      display: grid;
-      gap: 20px;
-    }
-    .project-card, .skill-card, .cert-card {
-      padding: 20px;
-      border-radius: 10px;
-      background: #fff;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #222;
-      color: #fff;
-    }
-    .dark-mode {
-      background: #121212;
-      color: #f5f5f5;
-    }
-    .dark-mode section { background: #1e1e1e; }
-    .theme-toggle {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gayathri | Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #333;
+    scroll-behavior: smooth;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    background: #222;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    color: #ff6600;
+  }
+
+  .theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+
+  section {
+    padding: 120px 20px 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    text-align: center;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: #fff;
+    padding: 150px 20px 100px 20px;
+    width: 100%;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff6600;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .btn:hover {
+    background: #e65c00;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  /* Grid layout for cards */
+  .projects, .skills, .certifications, .contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .project-card, .skill-card, .cert-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .project-card:hover, .skill-card:hover, .cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .contact p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .contact a {
+    color: #ff6600;
+    text-decoration: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #fff;
+    margin-top: 50px;
+  }
+
+  /* Dark mode */
+  .dark-mode {
+    background: #121212;
+    color: #f5f5f5;
+  }
+
+  .dark-mode section {
+    background: #1e1e1e;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Gayathri</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#contact">Contact</a>
-      <button class="theme-toggle" onclick="document.body.classList.toggle('dark-mode')">🌙</button>
-    </nav>
-  </header>
+<header>
+  <h1>Gayathri</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+    <button class="theme-toggle" onclick="document.body.classList.toggle('dark-mode')">🌙</button>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Hi, I’m Gayathri 👩‍💻</h2>
-    <p class="subtitle"><span id="typed"></span></p>
-    <a href="Gayathri_Resume.pdf" class="btn" download>Download Resume</a>
-  </section>
+<!-- Hero Section -->
+<section class="hero">
+  <h2>Hi, I’m Gayathri 👩‍💻</h2>
+  <p class="subtitle"><span id="typed"></span></p>
+  <a href="Gayathri_Resume.pdf" class="btn" download>Download Resume</a>
+</section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a Junior Software Developer working in IT industry. My expertise lies in
-      Java, Spring Boot, REST APIs, JSP, MySQL, and front-end technologies.  
-      Passionate about building scalable applications and solving real-world problems.
-    </p>
-  </section>
+<!-- About Section -->
+<section id="about">
+  <h2>About Me</h2>
+  <p style="max-width:800px; text-align:center;">
+    I am a Junior Software Developer working in the IT industry. My expertise lies in Java, Spring Boot, REST APIs, JSP, MySQL, and front-end technologies. Passionate about building scalable applications and solving real-world problems.
+  </p>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Endpoint Management System</h3>
-        <p>Worked on vulnerability detection & remediation module with Spring Boot + JSP + MySQL.</p>
-        <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a> | <a href="https://yourdemo.com" target="_blank">Live Demo</a></p>
-      </div>
-      <div class="project-card">
-        <h3>Library Management System</h3>
-        <p>Developed with Spring Boot & MySQL. Includes CRUD operations, authentication, and reporting.</p>
-        <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a></p>
-      </div>
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>Built with HTML, CSS, and JavaScript showcasing my skills and experience.</p>
-        <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a> | <a href="https://yourportfolio.com" target="_blank">Live</a></p>
-      </div>
+<!-- Projects Section -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h3>Endpoint Management System</h3>
+      <p>Worked on vulnerability detection & remediation module with Spring Boot + JSP + MySQL.</p>
+      <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a> | <a href="https://yourdemo.com" target="_blank">Live Demo</a></p>
     </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills">
-      <div class="skill-card">Java, Spring Boot, Hibernate</div>
-      <div class="skill-card">JSP, Servlets, REST APIs</div>
-      <div class="skill-card">MySQL, SQL</div>
-      <div class="skill-card">HTML, CSS, JavaScript</div>
-      <div class="skill-card">Git, Maven, Postman</div>
+    <div class="project-card">
+      <h3>Library Management System</h3>
+      <p>Developed with Spring Boot & MySQL. Includes CRUD operations, authentication, and reporting.</p>
+      <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a></p>
     </div>
-  </section>
-
-  <!-- Certifications Section -->
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="certifications">
-      <div class="cert-card">Full Stack Web Development – TAP Academy</div>
-      <div class="cert-card">Java Programming – NPTEL</div>
-      <div class="cert-card">Spring Framework Basics – Udemy</div>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Built with HTML, CSS, and JavaScript showcasing my skills and experience.</p>
+      <p><a href="https://github.com/yourrepo" target="_blank">GitHub</a> | <a href="https://yourportfolio.com" target="_blank">Live</a></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><i class="fa fa-envelope"></i> yourmail@example.com</p>
-      <p><i class="fa fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
-      <p><i class="fa fa-github"></i> <a href="https://github.com/yourgithub" target="_blank">GitHub</a></p>
-    </div>
-  </section>
+<!-- Skills Section -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div class="skill-card">Java, Spring Boot, Hibernate</div>
+    <div class="skill-card">JSP, Servlets, REST APIs</div>
+    <div class="skill-card">MySQL, SQL</div>
+    <div class="skill-card">HTML, CSS, JavaScript</div>
+    <div class="skill-card">Git, Maven, Postman</div>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Gayathri | Portfolio</p>
-  </footer>
+<!-- Certifications Section -->
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="certifications">
+    <div class="cert-card">Full Stack Web Development – TAP Academy</div>
+    <div class="cert-card">Java Programming – NPTEL</div>
+    <div class="cert-card">Spring Framework Basics – Udemy</div>
+  </div>
+</section>
 
-  <!-- Typed.js Animation -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    new Typed("#typed", {
-      strings: ["Junior Software Developer", "Java & Spring Enthusiast", "Problem Solver"],
-      typeSpeed: 60,
-      backSpeed: 40,
-      loop: true
-    });
-  </script>
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p><i class="fa fa-envelope"></i> yourmail@example.com</p>
+    <p><i class="fa fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+    <p><i class="fa fa-github"></i> <a href="https://github.com/yourgithub" target="_blank">GitHub</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Gayathri | Portfolio</p>
+</footer>
+
+<!-- Typed.js Animation -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+new Typed("#typed", {
+  strings: ["Junior Software Developer", "Java & Spring Enthusiast", "Problem Solver"],
+  typeSpeed: 60,
+  backSpeed: 40,
+  loop: true
+});
+</script>
 </body>
 </html>
